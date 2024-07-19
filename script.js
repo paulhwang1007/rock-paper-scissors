@@ -44,8 +44,11 @@ function getHumanChoice() {
         return "Rock";
     } else if (humanChoice.toLowerCase() === "paper") {
         return "Paper";
-    } else {
+    } else if (humanChoice.toLowerCase() === "scissors") {
         return "Scissors";
+    } else {
+        alert("Choose rock, paper, or scissors!");
+        console.log(getHumanChoice());
     }
 }
 
