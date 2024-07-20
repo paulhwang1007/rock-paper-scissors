@@ -24,7 +24,7 @@ console.log("hello world");
 // Project: Rock Paper Scissors
 
 // Getting the Computer Choice
-function getComputerchoice() {
+function getComputerChoice() {
     number = Math.random()
     if (number <= (1/3)) {
         return "Rock";
@@ -34,8 +34,6 @@ function getComputerchoice() {
         return "Scissors";
     }
 }
-
-console.log(getComputerchoice());
 
 // Getting the Human Choice
 function getHumanChoice() {
@@ -48,8 +46,56 @@ function getHumanChoice() {
         return "Scissors";
     } else {
         alert("Choose rock, paper, or scissors!");
-        console.log(getHumanChoice());
     }
 }
 
-console.log(getHumanChoice());
+
+// Keep track of the score
+let humanScore = 0;
+let computerScore = 0;
+
+// Logic to play a single roud
+function playRound(humanChoice, computerChoice) {
+
+    if (computerChoice.toLowerCase() === "rock") {
+        if (humanChoice.toLowerCase() === "paper") {
+            ++humanScore;
+            console.log("You win! Paper beats Rock!");
+        } else if (humanChoice.toLowerCase() === "scissors") {
+            ++computerScore;
+            console.log("You lose! Rock beats Scissors!");
+        } else {
+            console.log("Tie! Play Again!");
+        }
+    }
+
+    if (computerChoice.toLowerCase() === "paper") {
+        if (humanChoice.toLowerCase() === "scissors") {
+            ++humanScore;
+            console.log("You win! Scissors beats Paper!");
+        } else if (humanChoice.toLowerCase() === "rock") {
+            ++computerScore;
+            console.log("You lose! Paper beats Rock!");
+        } else {
+            console.log("Tie! Play Again!");
+        }
+    }
+
+    if (computerChoice.toLowerCase() === "scissors") {
+        if (humanChoice.toLowerCase() === "rock") {
+            ++humanScore;
+            console.log("You win! Rock beats Scissors!");
+        } else if (humanChoice.toLowerCase() === "paper") {
+            ++computerScore;
+            console.log("You lose! Scissors beats Paper!");
+        } else {
+            console.log("Tie! Play Again!");
+        }
+    }
+    return console.log(`Human Score: ${humanScore}; Computer Score: ${computerScore}`);
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
