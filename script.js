@@ -44,11 +44,11 @@ function getHumanChoice() {
         return "Paper";
     } else if (humanChoice.toLowerCase() === "scissors") {
         return "Scissors";
-    } else {
-        alert("Choose rock, paper, or scissors!");
     }
 }
 
+// Logic to play a game (5 rounds)
+function playGame() {
 
 // Keep track of the score
 let humanScore = 0;
@@ -95,7 +95,24 @@ function playRound(humanChoice, computerChoice) {
     return console.log(`Human Score: ${humanScore}; Computer Score: ${computerScore}`);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection1 = getHumanChoice();
+let computerSelection1 = getComputerChoice();
+let humanSelection2 = getHumanChoice();
+let computerSelection2 = getComputerChoice();
+let humanSelection3 = getHumanChoice();
+let computerSelection3 = getComputerChoice();
+let humanSelection4 = getHumanChoice();
+let computerSelection4 = getComputerChoice();
+let humanSelection5 = getHumanChoice();
+let computerSelection5 = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+playRound(humanSelection1, computerSelection1);
+playRound(humanSelection2, computerSelection2);
+playRound(humanSelection3, computerSelection3);
+playRound(humanSelection4, computerSelection4);
+playRound(humanSelection5, computerSelection5);
+
+}
+
+playGame();
