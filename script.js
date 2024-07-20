@@ -95,23 +95,11 @@ function playRound(humanChoice, computerChoice) {
     return console.log(`Human Score: ${humanScore}; Computer Score: ${computerScore}`);
 }
 
-let humanSelection1 = getHumanChoice();
-let computerSelection1 = getComputerChoice();
-let humanSelection2 = getHumanChoice();
-let computerSelection2 = getComputerChoice();
-let humanSelection3 = getHumanChoice();
-let computerSelection3 = getComputerChoice();
-let humanSelection4 = getHumanChoice();
-let computerSelection4 = getComputerChoice();
-let humanSelection5 = getHumanChoice();
-let computerSelection5 = getComputerChoice();
-
-
-playRound(humanSelection1, computerSelection1);
-playRound(humanSelection2, computerSelection2);
-playRound(humanSelection3, computerSelection3);
-playRound(humanSelection4, computerSelection4);
-playRound(humanSelection5, computerSelection5);
+for (let i = 0; i < 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
 
 }
 
